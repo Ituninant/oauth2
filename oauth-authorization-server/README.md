@@ -11,9 +11,4 @@ Spring OAuth Client.
 - Run the client from `client-server` module
 - Go to `http://127.0.0.1:8080/articles`
     - Enter the credentials `admin/password`
-- The module uses the new OAuth stack with Java 11
-
-### Relevant Articles:
-
-- [Spring Security OAuth Authorization Server](https://www.baeldung.com/spring-security-oauth-auth-server)
-- [Add Authorities as Custom Claims in JWT Access Tokens in Spring Authorization Server](https://www.baeldung.com/spring-jwt-access-tokens-authorities-custom-claims)
+- The module uses the new OAuth stack with Java 17

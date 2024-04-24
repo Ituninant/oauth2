@@ -1,4 +1,4 @@
-package com.baeldung.config;
+package com.itanton.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,11 +13,8 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-          .authorizeHttpRequests(authorizeRequests ->
-            authorizeRequests.anyRequest().authenticated()
-          )
-          .oauth2Login(oauth2Login ->
-            oauth2Login.loginPage("/oauth2/authorization/articles-client-oidc"))
+          .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
+          .oauth2Login(oauth2Login -> oauth2Login.loginPage("/oauth2/authorization/messages-client-oidc"))
           .oauth2Client(withDefaults());
         return http.build();
     }

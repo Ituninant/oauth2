@@ -1,4 +1,4 @@
-package com.baeldung.config;
+package com.itanton.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +13,8 @@ public class ResourceServerConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.securityMatcher("/articles/**")
-            .authorizeHttpRequests(authorize -> authorize.anyRequest()
-                .hasAuthority("SCOPE_articles.read"))
+        http.securityMatcher("/messages/**")
+            .authorizeHttpRequests(authorize -> authorize.anyRequest().hasAuthority("SCOPE_messages.read"))
             .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
         return http.build();
     }
